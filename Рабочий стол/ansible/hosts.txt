@@ -1,0 +1,18 @@
+vm-1   ansible_host=178.154.225.161   ansible_user=andrew   ansible_ssh_private_key_file=/home/andrew/.ssh/id_ed25519
+vm-2   ansible_host=62.84.116.230   ansible_user=andrew   ansible_ssh_private_key_file=/home/andrew/.ssh/id_ed25519
+vm-3   ansible_host=158.160.53.142   ansible_user=andrew   ansible_ssh_private_key_file=/home/andrew/.ssh/id_ed25519
+
+[ubuntu_postgres]
+vm-1   ansible_host=178.154.225.161   
+
+[ubuntu_app]
+vm-2   ansible_host=62.84.116.230
+[centOS_app]   
+vm-3   ansible_host=158.160.53.142   
+
+[all:children]
+ubuntu_app
+ubuntu_postgres
+centOS_app
+
+

@@ -1,0 +1,11 @@
+---
+- hosts: ubuntu_app
+  roles:
+    - roles/ubuntu_app
+- hosts: centOS_app
+  roles:
+    - roles/centOS_app
+
+- hosts: ubuntu_postgres
+  roles:
+    - roles/ubuntu_postgres
