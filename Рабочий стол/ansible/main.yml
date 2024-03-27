@@ -1,11 +1,18 @@
 ---
-- hosts: ubuntu_app
-  roles:
-    - roles/ubuntu_app
 - hosts: centOS_app
+  remote_user: andrew
+  become: yes
   roles:
-    - roles/centOS_app
+    - role: centOS_app
+
+- hosts: ubuntu_app
+  remote_user: andrew
+  become: yes
+  roles:
+    - role: ubuntu_app
 
 - hosts: ubuntu_postgres
+  remote_user: andrew
+  become: yes
   roles:
-    - roles/ubuntu_postgres
+    - role: ubuntu_postgres
